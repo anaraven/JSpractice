@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 1</title>
+  </head>
+  <body>
+    <div id="out">
+    </div>
+    <script type="text/javascript">
+      function output (txt) {
+        out = document.getElementById("out")
+        out.appendChild(document.createTextNode(txt));
+        out.appendChild(document.createElement('br'));
+      }
+      for(i=0; i<=10; i++) {output(i*i)}
+    </script>
+  </body>
+</html>
