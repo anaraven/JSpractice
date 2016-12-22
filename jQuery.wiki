@@ -1,0 +1,377 @@
+{{about|the JavaScript library|the actor|Jake Weary}}
+{{primary|date=August 2016}}
+{{lowercase title}}
+{{Infobox software
+| name  = jQuery
+| logo = [[File:JQuery logo.svg|220px]]
+| author = [[John Resig]]
+| developer = jQuery Team
+| released = {{start date and age|2006|08|26}}
+| latest release version = 1.12.4 ({{start date and age|2016|05|20}})<br />2.2.4 ({{start date and age|2016|05|20}})<br/>3.1.1 ({{Start date and age|2016|9|22}})<ref>{{cite web|url=http://blog.jquery.com/2016/09/22/jquery-3-1-1-released/|title=jQuery 3.1.1 Released! - Official jQuery Blog|first=jQuery Foundation-|last=jquery.org|publisher=}}</ref>
+| latest release date   = 
+| latest preview version = 
+| latest preview date    =
+| programming language   = [[JavaScript]]
+| platform = See [[#Browser support|Browser support]]
+| status = Active
+| genre = [[JavaScript library]]
+| license = [[MIT License|MIT]]<ref name="jqorg-license">{{cite web
+ | url = https://jquery.org/license/
+ | title = License - jQuery Project
+ | accessdate = 2014-07-02
+ | publisher = jQuery Foundation
+}}</ref>
+| website = {{URL|https://jquery.com}}
+| size = {{aligned table|cols=4|class=wikitable|style=margin:0
+| {{abbr|ver|version}} | {{abbr|gzip|compressed and gzipped}}
+| {{abbr|prod|compressed, production mode}} | {{abbr|dev|uncompressed, development mode}}
+| 1.x | 31kb | 90.9kb | 266kb
+| 2.x | 27.7kb | 81.6kb | 236kb
+| 3.x | 29.9kb | 86.3kb | 263kb
+}}
+([[Kilobyte#Base 2 definition|KB]])
+}}
+'''jQuery''' is a [[cross-platform]] [[JavaScript library]] designed to simplify the [[client-side scripting]] of [[HTML]].<ref name="jquery.com">{{cite web|url=//jquery.com/|title=jQuery: The write less, do more, JavaScript library|publisher=The jQuery Project|accessdate=29 April 2010}}</ref> jQuery is the most popular JavaScript library in use today, with installation on 65% of the top 10 million highest-trafficked sites on the Web.<ref>{{cite web |url=http://w3techs.com/technologies/overview/javascript_library/all |title=Usage of JavaScript libraries for websites|accessdate=2015-07-14}}</ref><ref>{{cite web |url=http://trends.builtwith.com/javascript/JQuery |title=jQuery Usage Statistics|accessdate=2013-05-17}}</ref><ref name="libscore.com">{{cite web|url=http://libscore.com/#libs|title=Libscore|publisher=}}</ref> jQuery is [[free and open source software|free, open-source software]] licensed under the [[MIT License]].<ref name="jqorg-license"/>
+
+jQuery's syntax is designed to make it easier to navigate a document, select [[Document Object Model|DOM]] elements, create [[animation]]s, handle [[event (computing)|event]]s, and develop [[Ajax (programming)|Ajax]] applications. jQuery also provides capabilities for developers to create [[plug-in (computing)|plug-in]]s on top of the JavaScript library. This enables developers to create [[abstraction (computer science)|abstraction]]s for low-level interaction and animation, advanced effects and high-level, themeable widgets. The modular approach to the jQuery library allows the creation of powerful [[dynamic web page]]s and Web applications.
+
+The set of [[#Features|jQuery core features]]—DOM element selections, traversal and manipulation—enabled by its ''selector engine'' (named "Sizzle" from v1.3), created a new "programming style", fusing algorithms and DOM data structures. This style influenced the architecture of other [[Comparison of JavaScript frameworks|JavaScript frameworks]] like [[YUI Library|YUI v3]] and [[Dojo Toolkit|Dojo]], later stimulating the creation of the standard ''Selectors API''.<ref>"[http://www.w3.org/TR/selectors-api/#queryselector Selectors API Level 1, W3C Recommendation]" (21 February 2013). This standard turned what was jQuery "helper methods" into JavaScript-native ones, and the wide use of jQuery stimulated the [http://caniuse.com/queryselector fast adoption] of <tt>querySelector/querySelectorAll</tt> into main Web browsers.</ref>
+
+[[Microsoft]] and [[Nokia]] bundle jQuery on their platforms.<ref name="2008-09-28">{{cite web |url=//jquery.com/blog/2008/09/28/jquery-microsoft-nokia/ |title=jQuery, Microsoft, and Nokia |date=2008-09-28 |last=Resig |first=John |publisher=jQuery |work=jQuery Blog |accessdate=2009-01-29 }}</ref> Microsoft includes it with [[Microsoft Visual Studio|Visual Studio]]<ref>{{cite web |url=http://weblogs.asp.net/scottgu/archive/2008/09/28/jquery-and-microsoft.aspx |title=jQuery and Microsoft |last=Guthrie |first=Scott |work=ScottGu's Blog |date=2008-09-28 |accessdate=2009-01-29 }}</ref> for use within Microsoft's [[ASP.NET AJAX]] and [[ASP.NET MVC]] frameworks while Nokia has integrated it into the Web Run-Time widget development platform.<ref>{{cite web |url=http://wiki.forum.nokia.com/index.php/Guarana_UI:_a_jQuery-Based_UI_Library_for_Nokia_WRT |title=Guarana UI: A jQuery Based UI Library for Nokia WRT |accessdate=2010-03-30 |work=Forum Nokia}}</ref> jQuery has also been used in [[MediaWiki]] since version 1.16.<ref>{{cite web|url=http://www.mediawiki.org/wiki/JQuery |title=jQuery |publisher=MediaWiki |date=January 19, 2012 |accessdate=March 11, 2012}}</ref>
+
+==Overview==
+jQuery, at its core, is a '''DOM''' ([[Document Object Model]]) manipulation library. The DOM is a tree-structure representation of all the elements of a Web page and jQuery simplifies the syntax for finding, selecting, and manipulating these DOM elements. For example, jQuery can be used for finding an element in the document with a certain property (e.g. all elements with an [[HTML element#heading|h1]] tag), changing one or more of its attributes (e.g. color, visibility), or making it respond to an event (e.g. a mouse click).
+
+jQuery also provides a paradigm for event handling that goes beyond basic DOM element selection and manipulation. The event assignment and the event callback function definition are done in a single step in a single location in the code. jQuery also aims to incorporate other highly used JavaScript functionality (e.g. fade ins and fade outs when hiding elements, animations by manipulating [[Cascading Style Sheets|CSS]] properties).
+
+The principles of developing with jQuery are:
+* '''Separation of JavaScript and HTML''': The jQuery library provides simple syntax for adding [[Event (computing)|event]] handlers to the [[Document Object Model|DOM]] using JavaScript, rather than adding [[HTML attribute#Event attributes|HTML event attributes]] to call JavaScript functions. Thus, it encourages developers to [[Separation of concerns|completely separate]] JavaScript code from HTML markup.
+* '''Brevity and clarity''': jQuery promotes brevity and clarity with features like chainable functions and shorthand function names.
+* '''Elimination of cross-browser incompatibilities''': The JavaScript engines of different browsers differ slightly so JavaScript code that works for one browser may not work for another. Like other JavaScript toolkits, jQuery handles all these cross-browser inconsistencies and provides a consistent interface that works across different browsers.
+* '''Extensibility''': New events, elements, and methods can be easily added and then reused as a plugin.
+
+==Features==
+jQuery includes the following features:
+* [[Document Object Model|DOM]] element selections using the multi-browser open source selector engine ''Sizzle'', a spin-off of the jQuery project<ref>{{cite web |title=jQuery 1.3 and the jQuery Foundation |url=http://blog.jquery.com/2009/01/14/jquery-13-and-the-jquery-foundation/ |last=Resig |first=John |date=2009-01-14 |work=jQuery Blog | accessdate=2009-05-04 }}</ref>
+* DOM manipulation based on CSS selectors that uses elements' names and attributes, such as id and class, as criteria to select nodes in the DOM
+* Events
+* Effects and animations
+* [[Ajax (programming)|Ajax]]
+* [[Futures and promises|Deferred and Promise]] objects to control asynchronous processing
+* [[JSON]] parsing
+* [[Extensibility]] through plug-ins
+* Utilities, such as feature detection
+* Compatibility methods that are natively available in modern browsers, but need fall backs for older ones, such as <code>inArray()</code> and <code>each()</code>
+* Multi-browser (not to be confused with [[cross-browser]]) support
+
+===Browser support===
+Both versions 1.x and 2.x of jQuery support "current-1 versions" (meaning the current stable version of the browser and the version that preceded it) of [[Firefox]], [[Google Chrome|Chrome]], [[Safari (web browser)|Safari]], and [[Opera (web browser)|Opera]]. Version 1.x also supports [[Internet Explorer 6]] or higher. However, jQuery version 2.x dropped [[Internet Explorer]] 6–8 support and supports only [[Internet Explorer 9|IE 9]] and later versions.<ref>[//jquery.com/browser-support/ Browser Support | jQuery]</ref>
+
+==Usage==
+
+===Including the library===
+The jQuery library is a single JavaScript file containing all of its common DOM, event, effects, and Ajax functions. It can be included within a Web page by linking to a local copy or to one of the many copies available from public servers. jQuery has a [[content delivery network]] (CDN) hosted by [https://www.maxcdn.com/ MaxCDN].<ref>{{cite web|url=https://code.jquery.com/|title=jQuery CDN|first=jQuery Foundation -|last=jquery.org|publisher=}}</ref> Google<ref>{{cite web|url=https://code.google.com/apis/ajaxlibs/documentation/#jquery |title=Google Libraries API - Developer's Guide |publisher=code.google.com |date= |accessdate=March 11, 2012}}</ref> and Microsoft<ref>{{cite web | url=http://www.asp.net/ajaxlibrary/cdn.ashx | title=Microsoft Ajax Content Delivery Network | publisher=Microsoft Corporation | work=ASP.net | accessdate=June 19, 2012}}</ref> host it as well.
+
+<source lang=html5>
+<script src="jquery.js"></script>
+</source>
+
+It is also possible to include jQuery directly from a CDN:
+
+<source lang=html5>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+</source>
+
+===Usage styles===
+
+jQuery has two usage styles:
+* Via the <code lang="jQuery">$</code> function, which is a [[Factory method pattern|factory method]] for the jQuery object. These functions, often called ''commands'', are [[method chaining|''chainable'']] as they all return jQuery objects.
+* Via <code lang="jQuery">$.</code>-prefixed functions. These are ''utility functions'', which do not act upon the jQuery object directly.
+Access to and manipulation of multiple DOM nodes in jQuery typically begins with calling the <code lang="jQuery">$</code> function with a CSS selector string. This returns a jQuery object referencing all the matching elements in the [[HTML]] page. <code lang="jQuery">$("div.test")</code>, for example, returns a jQuery object with all the <code lang="html5">div</code> elements of class <code lang="html5">test</code>. This node set can be manipulated by calling methods on the returned jQuery object or on the nodes themselves.
+
+===No-conflict mode===
+jQuery also includes <code>.noConflict()</code> mode, which relinquishes control of <code>$</code>. This is helpful if jQuery is used with other libraries that also use <code>$</code> as an identifier. In no-conflict mode, developers can use <code>jQuery</code> as a replacement for <code>$</code> without losing functionality.<ref>{{cite web|url=//api.jquery.com/jquery.noconflict/| title=jQuery.noConflict() jQuery API Documentation}}</ref>
+
+===Typical start-point===
+
+Typically, jQuery is used by putting initialization code and event handling functions in <code lang="jQuery">$(''handler'')</code>. This is triggered when the browser has constructed the DOM and sends a load event.
+
+<syntaxhighlight lang="javascript">
+$(function () {
+        // jQuery code, event handling callbacks here
+});
+</syntaxhighlight>
+
+Historically, <code lang="javascript">$(document).ready(callback)</code> has been the de facto signature for running code when the DOM is ready. However, since jQuery 3.0, developers are encouraged to use the much shorter <code lang="javascript">$(handler)</code> signature.<ref name="howToUseReady">{{cite web|url=https://jquery.com/upgrade-guide/3.0/#deprecated-document-ready-handlers-other-than-jquery-function|title=jQuery Core 3.0 Upgrade Guide - jQuery|first=jQuery Foundation -|last=jquery.org|publisher=}}</ref>
+
+Callback functions for event handling on elements that aren't loaded yet can be registered inside <code lang="jQuery">.ready()</code> as [[Anonymous function#JavaScript|anonymous functions]]. These event handlers will only be called when the event is triggered. For example, the following code adds an event handler for a mouse click on an <code lang="html">img</code> image element.
+
+<syntaxhighlight lang="javascript">
+$(function () {
+        $('img').on('click', function () {
+              // handle the click event on any img element in the page
+        });
+});
+</syntaxhighlight>
+
+The following syntaxes are equivalent, although only <code lang="jQuery">$(''handler'')</code> should be used:<ref name="howToUseReady" />
+
+* <code lang="jQuery">$(''handler'')</code>
+* <code lang="jQuery">$().ready(''handler'')</code>
+* <code lang="jQuery">$(document).ready(''handler'')</code>
+* <code lang="jQuery">$("selector").ready(''handler'')</code>
+
+===Chaining===
+
+jQuery commands typically return a jQuery object, so commands can be chained:
+
+<source lang=javascript>
+$('div.test').add('p.quote').addClass('blue').slideDown('slow');
+</source>
+This line finds the union of all <code lang="HTML">div</code> tags with class attribute <code lang="HTML">test</code> and all <code lang="HTML">p</code> tags with class attribute <code lang="HTML">quote</code>, adds the class attribute <code lang="HTML">blue</code> to each matched element, and then increases their height with an animation. The <code lang="jQuery">$</code> and <code lang="jQuery">add</code> functions affect the matched set, while the <code lang="jQuery">addClass</code> and <code lang="jQuery">slideDown</code> affect the referenced nodes.
+
+Certain jQuery functions return specific values (such as <code lange="jQuery">$('#input-user-email').val()</code>). In these cases, chaining will not work as the value does not reference the jQuery object.
+
+===Creating new DOM elements===
+Besides accessing DOM nodes through jQuery object hierarchy, it is also possible to create new DOM elements, if a string passed as the argument to $() looks like HTML. For example, this line finds an HTML <code lang="jQuery">select</code> element with ID <code lang="jQuery">carmakes</code>, and adds an <code lang="jQuery">option</code> element with value "VAG" and text "Volkswagen":
+<source lang=javascript>
+$('select#carmakes').append($('<option />').attr({value:"VAG"}).append("Volkswagen"));
+</source>
+
+===Utility functions===
+
+Functions prefixed with <code lang="jQuery">$.</code> are utility functions or functions that affect global properties and behaviour. The following, for example, is a function used for iterating over arrays called <code lang="jQuery">each</code> in jQuery:
+<source lang=javascript>
+$.each([1,2,3], function() {
+  console.log(this + 1);
+});
+</source>
+This writes "2", "3", "4" to the console.
+
+===Ajax===
+
+It is possible to perform [[cross-browser]] [[Ajax (programming)|Ajax]] requests using <code lang="jQuery">$.ajax</code>. Its associated methods can be used to load and manipulate remote data.
+<source lang=javascript>
+$.ajax({
+  type: 'POST',
+  url: '/process/submit.php',
+  data: {
+    name : 'John',
+    location : 'Boston',
+  },
+}).done(function(msg) {
+  alert('Data Saved: ' + msg);
+}).fail(function(xmlHttpRequest, statusText, errorThrown) {
+  alert(
+    'Your form submission failed.\n\n'
+      + 'XML Http Request: ' + JSON.stringify(xmlHttpRequest)
+      + ',\nStatus Text: ' + statusText
+      + ',\nError Thrown: ' + errorThrown);
+});
+</source>
+
+This example posts the data <code>name=John</code> and <code>location=Boston</code> to <code>/process/submit.php</code> on the server. When this request finishes the success function is called to alert the user. If the request fails it will alert the user to the failure, the status of the request, and the specific error.
+
+====Asynchronous====
+Note that the above example uses the deferred nature of <code>$.ajax()</code> to handle its asynchronous nature: <code>.done()</code> and <code>.fail()</code> create callbacks that run only when the asynchronous process is complete.
+
+==jQuery plug-ins==
+jQuery's architecture allows developers to create [[Plug-in (computing)|plug-in]] code to extend its function. There are thousands of jQuery plug-ins available on the Web<ref name="plugins.jquery.com">{{cite web|title=Plugins|url=http://plugins.jquery.com/|publisher=The jQuery Project|accessdate=26 August 2010}}</ref> that cover a range of functions, such as Ajax helpers, [[Web service]]s, datagrids, dynamic lists, [[XML]] and [[XSLT]] tools, [[drag and drop]], events, [[HTTP cookie|cookie]] handling, and [[modal window]]s.
+
+An important source of jQuery plug-ins is the plugins subdomain of the jQuery Project website.<ref name="plugins.jquery.com"/> The plugins in this subdomain, however, were accidentally deleted in December 2011 in an attempt to rid the site of spam.<ref>{{cite web|url=http://blog.jquery.com/2011/12/08/what-is-happening-to-the-jquery-plugins-site/#pluginstldr|title=What Is Happening To The jQuery Plugins Site?|publisher=|accessdate=22 April 2015}}</ref> The new site will include a [[GitHub]]-hosted repository, which will require developers to resubmit their plugins and to conform to new submission requirements.<ref>{{cite web|url=https://github.com/jquery/plugins.jquery.com|title=jquery/plugins.jquery.com|work=GitHub|accessdate=22 April 2015}}</ref> There are alternative plug-in search engines<ref name="jquery plugin">{{cite web|last=Kanakiya|first=Jay|title=jquery plugins|url=http://jquer.in}}</ref> like [http://jquer.in jquer.in] that take more specialized approaches, such as listing only plug-ins that meet certain criteria (e.g. those that have a public code repository). jQuery provides a "Learning Center" that can help users understand JavaScript and get started developing jQuery plugins.<ref>{{cite web|title=jQuery Learning Center|url=//learn.jquery.com/|publisher=jQuery Foundation |accessdate=2014-07-02}}</ref>
+
+==History==
+jQuery was originally released in January 2006 at [[BarCamp]] NYC by [[John Resig]] and was influenced by Dean Edwards' earlier [[cssQuery]] library.<ref>{{cite book | last=York | first=Richard | title=Beginning JavaScript and CSS Development with jQuery | page=28 | publisher=Wiley | isbn=978-0-470-22779-4 | year=2009 | url=//books.google.com/books?id=L9otyT4crSQC&pg=PA515}}</ref> It is currently maintained by a team of developers led by Timmy Willison (with the jQuery selector engine, Sizzle, being led by Richard Gibson).
+
+jQuery has also an interesting [[software license]] history.<ref>[http://www.softwarefreedom.org/resources/2013/lcs-slides-aaronw/#/jquery-history jquery history] on softwarefreedom.org</ref> Originally under the [[CC BY-SA 2.5]], it was [[Software relicensing|relicensed]] to the [[MIT license]] in 2006.<ref>[https://blog.jquery.com/2006/05/27/jquery-under-the-mit-license/ jquery-under-the-mit-license] on jquery.org (2006)</ref> On end of 2006 it was [[dual-license]]d under [[GPL]] and MIT license.<ref>[http://web.archive.org/web/20100301130833/http://jquery.org/license license] on jquery.org (archived 2010)</ref> As this led to some confusion, in 2012 the GPL was dropped and is now only MIT licensed.<ref>[https://blog.jquery.com/2012/09/10/jquery-licensing-changes/ jquery-licensing-changes] on jquery.org (2012)</ref>
+
+As of 2015, jQuery remains the most widely used JavaScript library on the Web.{{fact|date=August 2016}}
+
+===Release history===
+{| class="wikitable sortable"
+|-
+! Version number
+! Release date
+! Latest update
+! Size Prod (KB)
+! Additional notes
+|-
+| 1.0
+| {{start date|2006|08|26}}
+|
+|
+| First stable release
+|-
+| 1.1
+| {{start date|2007|01|14}}
+|
+|
+|
+|-
+| 1.2
+| {{start date|2007|09|10}}
+|
+|
+|
+|-
+| 1.3
+| {{start date|2009|01|14}}
+|
+| 55.9
+| Sizzle Selector Engine introduced into core
+|-
+| 1.4
+| {{start date|2010|01|14}}
+|
+|
+|
+|-
+| 1.5
+| {{start date|2011|01|31}}
+|
+|
+| Deferred callback management, ajax module rewrite
+|-
+| 1.6
+| {{start date|2011|05|03}}
+|
+|
+| Significant performance improvements to the attr() and val() functions
+|-
+| 1.7
+| {{start date|2011|11|03}}
+| 1.7.2 ({{start date|2012|03|21}})
+|
+| New Event APIs: .on() and .off(), while the old APIs are still supported.
+|-
+| 1.8
+| {{start date|2012|08|09}}
+| 1.8.3 ({{start date|2012|11|13}})
+| 91.4
+| Sizzle Selector Engine rewritten, improved animations and $(html, props) flexibility.
+|-
+| 1.9
+| {{start date|2013|01|15}}
+| 1.9.1 ({{release date|2013|02|04}})
+|
+| Removal of deprecated interfaces and code cleanup
+|-
+| 1.10
+| {{start date|2013|05|24}}
+| 1.10.2 ({{start date|2013|07|03}})
+|
+| Incorporated bug fixes and differences reported from both the 1.9 and 2.0 beta cycles
+|-
+| 1.11
+| {{start date|2014|01|24}}
+| 1.11.3 ({{start date|2015|04|28}})
+| 95.9
+|
+|-
+| 1.12
+| {{start date|2016|01|08}}
+| 1.12.4 ({{start date|2016|05|20}})
+| 95
+|
+|-
+| 2.0
+| {{start date|2013|04|18}}
+| 2.0.3 ({{start date|2013|07|03}})
+| 81.1
+| Dropped IE 6–8 support for performance improvements and reduction in filesize
+|-
+| 2.1
+| {{start date|2014|01|24}}
+| 2.1.4 ({{start date|2015|04|28}})
+| 82.4
+|
+|-
+| 2.2
+| {{start date|2016|01|08}}
+| 2.2.4 ({{start date|2016|05|20}})
+| 85.6
+|-
+| 3.0
+| {{start date|2016|6|9}}
+| 3.0.0 ({{start date|2016|6|9}})
+| 86.3
+| Promises/A+ support for Deferreds, $.ajax and $.when, .data() HTML5-compatible
+|-
+| 3.1
+| {{start date|2016|7|7}}
+| 3.1.0 ({{start date|2016|7|7}})
+| 86.3
+| jQuery.readyException added, ready handler errors are now not silenced
+|}
+
+==Testing framework==
+[[QUnit]] is a [[test automation framework]] used to test the jQuery project. The jQuery team developed it as an in-house unit testing library.<ref name="qunit-history">{{Cite web|url = http://qunitjs.com/#History|title = History|date = |accessdate = 2014-07-02|website = qunitjs.com|publisher = |last = |first = }}</ref> The jQuery team uses it to test its code and plugins, but it can test any generic JavaScript code, including server-side JavaScript code.<ref name="qunit-history"/>
+
+As of 2011, the jQuery Testing Team uses [[QUnit]] with [[TestSwarm]] to test each jQuery codebase release.<ref>{{cite web|url=http://jquerytesting.pbworks.com/w/page/41556026/FrontPage|title=jQuery Testing Team Wiki|publisher=}}</ref>
+
+==See also==
+{{Portal|Free software}}
+* [[Comparison of JavaScript frameworks]]
+* [[jQuery Mobile]]
+* [[jQuery UI]]
+* [[Globalize]]
+
+==References==
+{{Reflist|2}}
+
+==Further reading==
+{{Refbegin}}
+* {{cite video
+ | url = http://video.yahoo.com/watch/410472/2391234
+ | title = Advancing JavaScript with Libraries (Part 1)
+ | people = John Resig (speaker)
+ | format = Yahoo! Video
+ | publisher = YUI Theater
+ | date = 2007-04-13
+ | accessdate = 2009-05-04
+}}
+* {{cite video
+ | url = http://video.yahoo.com/watch/412541/2395771
+ | title = Advancing JavaScript with Libraries (Part 2)
+ | people = John Resig (speaker)
+ | format = Yahoo! Video
+ | publisher = YUI Theater
+ | date = 2007-04-13
+ | accessdate = 2009-05-04
+}}
+* {{cite web
+ | title = JavaScript, .Net developers aided in separate project
+ | last = Krill | first = Paul
+ | work = [[InfoWorld]]
+ | url = http://www.infoworld.com/d/developer-world/javascript-net-developers-aided-in-separate-projects-531
+ | date = 2006-08-31
+ | accessdate = 2009-05-04
+}}
+* {{cite web
+ | title = jQuery Eases JavaScript, AJAX Development
+ | last = Taft | first = Darryl K.
+ | work = [[eWeek]]
+ | url=http://www.eweek.com/c/a/Application-Development/jQuery-Eases-JavaScript-AJAX-Development/
+ | date = 2006-08-30
+ | accessdate = 2009-05-04
+}}
+{{Refend}}
+
+==External links==
+{{Commons category|JQuery}}
+* {{youtube|8mwKq7_JlS8|Dmitri Gaskin Google Tech Talk, 2008}}
+* {{Official website|//jquery.com}}
+
+{{ECMAScript}}
+{{Application frameworks}}
+{{Widget toolkits}}
+
+{{Authority control}}
+
+{{DEFAULTSORT:Jquery}}
+[[Category:2006 software]]
+[[Category:Ajax (programming)]]
+[[Category:Free software programmed in JavaScript]]
+[[Category:JavaScript libraries]]
+[[Category:Software using the MIT license]]
+
