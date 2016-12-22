@@ -7,7 +7,7 @@ Embedded within an [HTML](HTML "wikilink") webpage, the JavaScript D3.js library
 
 ### Selections
 
-The central principle of D3.js design is to enable the programmer to first use a CSS-style selector to select a given set of [Document Object Model](Document_Object_Model "wikilink") (DOM) nodes, then use operators to manipulate them in a similar manner to [jQuery](jQuery "wikilink"). For example, by using D3.js, one may select all HTML elements, and then change their text color, e.g. to lavender:
+    The central principle of D3.js design is to enable the programmer to first use a CSS-style selector to select a given set of [Document Object Model](Document_Object_Model "wikilink") (DOM) nodes, then use operators to manipulate them in a similar manner to [jQuery](jQuery "wikilink").  For example, by using D3.js, one may select all HTML elements, and then change their text color, e.g. to lavender:
 
 ``` {.javascript}
  d3.selectAll("p")                 // select all <p> elements
