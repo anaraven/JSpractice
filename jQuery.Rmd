@@ -1,3 +1,13 @@
+---
+title: jQuery
+output: 
+  tufte::tufte_html:
+    self_contained: no
+    css: local.css
+  html_document: 
+    self_contained: no
+---
+
 **jQuery** is a [cross-platform](cross-platform "wikilink") [JavaScript library](JavaScript_library "wikilink") designed to simplify the [client-side scripting](client-side_scripting "wikilink") of [HTML](HTML "wikilink"). jQuery is the most popular JavaScript library in use today, with installation on 65% of the top 10 million highest-trafficked sites on the Web. jQuery is [free, open-source software](free_and_open_source_software "wikilink") licensed under the [MIT License](MIT_License "wikilink").
 
 jQuery's syntax is designed to make it easier to navigate a document, select [DOM](Document_Object_Model "wikilink") elements, create [animations](animation "wikilink"), handle [events](event_(computing) "wikilink"), and develop [Ajax](Ajax_(programming) "wikilink") applications. jQuery also provides capabilities for developers to create [plug-ins](plug-in_(computing) "wikilink") on top of the JavaScript library. This enables developers to create [abstractions](abstraction_(computer_science) "wikilink") for low-level interaction and animation, advanced effects and high-level, themeable widgets. The modular approach to the jQuery library allows the creation of powerful [dynamic web pages](dynamic_web_page "wikilink") and Web applications.

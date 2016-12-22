@@ -1,4 +1,13 @@
-# D3
+---
+title: D3
+output: 
+  tufte::tufte_html:
+    self_contained: no
+    css: local.css
+  html_document: 
+    self_contained: no
+---
+
 **D3.js** (or just **D3** for **Data-Driven Documents**) is a [JavaScript](JavaScript "wikilink") library for producing dynamic, interactive [data visualizations](data_visualization "wikilink") in [web browsers](web_browser "wikilink"). It makes use of the widely implemented [SVG](Scalable_Vector_Graphics "wikilink"), [HTML5](HTML5 "wikilink"), and [CSS](Cascading_Style_Sheets "wikilink") standards.
 
 ## Technical principles
@@ -9,7 +18,7 @@ Embedded within an [HTML](HTML "wikilink") webpage, the JavaScript D3.js library
 
 The central principle of D3.js design is to enable the programmer to first use a CSS-style selector to select a given set of [Document Object Model](Document_Object_Model "wikilink") (DOM) nodes, then use operators to manipulate them in a similar manner to [jQuery](jQuery "wikilink").  For example, by using D3.js, one may select all HTML elements, and then change their text color, e.g. to lavender:
 
-``` {.javascript}
+```javascript
  d3.selectAll("p")                 // select all <p> elements
    .style("color", "lavender")     // set style "color" to value "lavender"
    .attr("class", "squares")       // set attribute "class" to value "squares"
@@ -22,7 +31,7 @@ The selection can be based on tag (as in the above example), class, identifier, 
 
 By declaring a transition, values for attributes and styles can be smoothly interpolated over a certain time. The following code will make all HTML elements on a page gradually change their text color to pink:
 
-``` {.javascript}
+```javascript
  d3.selectAll("p")             // select all <p> elements
    .transition("trans_1")      // transition with name "trans_1"
      .delay(0)                 // transition starting 0ms after trigger
@@ -35,7 +44,7 @@ By declaring a transition, values for attributes and styles can be smoothly inte
 
 For more advanced uses, loaded data drives the creation of elements. D3.js loads a given dataset, then, for each of its elements, creates an SVG object with associated properties (shape, colors, values) and behaviors (transitions, events).
 
-``` {.javascript}
+```javascript
 // Data
   var data = [
      { name:"Ireland",  income:53000, life: 78, pop:6378, color: "green"},
@@ -109,44 +118,7 @@ D3.js array operations are built to complement existing array support in JavaScr
 -   Support for RGB, HSL, HCL, and L\*a\*b\* color representation.
 -   Brightening, darkening, and interpolation of colors.
 
-
-## Further reading
-
-### Background on data visualization and information graphics:
-
-* {{citation |first1=Andy |last1=Kirk |title=Data Visualization: a successful design process |edition=1st |date=December 2012 |publisher=[[Packt Publishing]] |place=Birmingham |isbn=978-1-84969-346-2 |url=http://www.packtpub.com/data-visualization-a-successful-design-process/book }}
-* {{citation |first1=Alberto |last1=Cairo |title=The Functional Art |edition=1st |date=August 2012 |publisher=[[Peachpit]] |place=Berkeley |isbn=978-0321834737 |url=http://www.thefunctionalart.com/ }}
-
-### Background on D3.js itself:
-
-* {{citation |first1=Michael |last1=Bostock |first2=Vadim |last2=Ogievetsky |first3=Jeffrey |last3=Heer |title=D3: Data-Driven Documents |journal=IEEE Transactions on Visualization and Computer Graphics |date=October 2011 |publisher=[[IEEE Press]] |url=http://vis.stanford.edu/papers/d3 |volume=17 |issue=12 |pages=2301–2309 |doi=10.1109/TVCG.2011.185 |pmid=22034350}}
-
-### Using D3.js - beginner level:
-
-* {{citation |first1=Scott |last1=Murray |title=Interactive Data Visualization for the Web, An Introduction to Designing with D3 |edition=1st |date=March 2013 |publisher=[[O’Reilly Media]] |place=Sebastopol, California |isbn=978-1-4493-3973-9 |url=http://shop.oreilly.com/product/0636920026938.do }}
-* {{citation |first1=Simon |last1=Timms |title=Social Data Visualization with HTML5 and JavaScript |edition=1st |date=September 2013 |publisher=[[Packt Publishing]] |place=Birmingham |isbn=978-1-7821-6654-2 |url=http://www.packtpub.com/social-data-visualization-with-html5-and-javascript/book }}
-
-### Using D3.js - intermediate level:
-
-* {{citation |first1=Mike |last1=Dewar |title=Getting Started with D3 |series=Creating Data-Driven Documents |edition=1st |editor1-first=Julie |editor1-last=Steele |editor2-first=Meghan |editor2-last=Blanchette |date=June 2012 |publisher=[[O’Reilly Media]] |place=Sebastopol, California |isbn=978-1-4493-2879-5 |url=https://books.google.com/books?id=-1Zk213nXsYC }}
-* {{citation |first1=Nick |last1=Qi Zhu |title=Data Visualization with D3.js Cookbook |edition=1st |date=October 2013 |publisher=[[Packt Publishing]] |place=Birmingham |isbn=978-1-7821-6216-2 |url=http://www.packtpub.com/data-visualization-with-d3-js-cookbook/book }}
-
-### Others
-* {{cite book|last1=Newton|first1=Thomas |last2=Villareal |first2=Oscar |title=Learning D3.js Mapping|date=2014|publisher=Packt Publishing|isbn=9781783985609|page=126|url=https://www.packtpub.com/web-development/learning-d3js-mapping}}
-* {{citation |url=https://www.packtpub.com/web-development/mastering-d3js|title=Mastering D3.js|first=Pablo|last=Navarro Castillo|year=2014|publisher=[[Packt Publishing]] |place=Birmingham |isbn=9781783286270|page=352}}
-* {{citation |url=https://www.packtpub.com/web-development/data-visualization-d3js|title=Data Visualization with d3.js|first=Swizec|last=Teller|year=2013|publisher=[[Packt Publishing]] |place=Birmingham |isbn=9781782160007|page=194}}
-* {{citation |url=https://www.packtpub.com/web-development/learning-d3js-mapping |title=Learning D3.js Mapping|first1=Thomas|last1=Newton|first2=Oscar|last2=Villarreal|year=2014|publisher=[[Packt Publishing]] |place=Birmingham |isbn=9781783985609|page=126}}
-* {{citation |url=http://shop.oreilly.com/product/9781939902023.do|title=Developing a D3.js Edge: Constructing Reusable D3 Components and Charts|first=Christophe|last=Viau|year=2013|publisher=[[Bleeding Edge Press]] |isbn=9781939902023|page=268}}
-* {{citation |url=http://www.amazon.com/D3-js-Action-Elijah-Meeks/dp/1617292117/ref=sr_1_1?ie=UTF8&qid=1409163691&sr=8-1&keywords=elijah+meek|title=D3.js in Action|first=Elijah|last=Meeks|year=2014|publisher=[[Manning Publications]] |isbn=9781617292118|page=325}}
-* {{citation |url=https://leanpub.com/D3-Tips-and-Tricks|title=D3 Tips and Tricks|first=Malcolm|last=Maclean|year=2014|publisher=[[Leanpub]] |page=580}}
-* {{citation |url=http://www.informit.com/store/visual-storytelling-with-d3-an-introduction-to-data-9780321933171|title=Visual Storytelling with D3: An Introduction to Data Visualization in JavaScript|first=Ritchie|last=King|year=2014|publisher=[[Addison-Wesley Data & Analytics Series]] |page=288}}
-
-### Videos
-* {{citation |first1=Nikhil |last1=Gopal |title=D3 and CoffeeScript: A Python Programmer's Introduction to Web Visualizations |date=October 2014 |publisher=[[O’Reilly Media]] |place=Sebastopol, California |url=http://shop.oreilly.com/product/110000663.do }}
-* {{citation |first1=Ritchie |last1=King |title=D3 Visualization LiveLessons: An Introduction to Data Visualization in JavaScript |date= December 2014 |publisher=[[Addison-Wesley Professional]] |url=http://www.informit.com/store/d3-visualization-livelessons-an-introduction-to-data-9780134087139 }}
-
 ## External links
 * [official website](d3js.org)
 * [https://github.com/mbostock/d3/wiki/Gallery/ D3.js Gallery]
 * [http://bl.ocksplorer.org Blocksplorer], search for blocks by methods used
-
