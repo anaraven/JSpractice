@@ -13,6 +13,7 @@
         margin: 0;
       }
       #cnv {
+        position: relative;
         height: 400px;
         font-size: 200px;
         font-family: fantasy;
@@ -29,12 +30,22 @@
         right: 0px;
         width: 170px;
       }
+      .ball {
+        position: absolute;;
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border: red solid;
+        border-radius: 50%;
+      }
     </style>
   </head>
   <body>
     <p id="score">0000</p>
-    <p id="cnv">x</p>
-    <div id="out">y
+    <div id="cnv">
+      <div class="ball" id="b1"></div>
+    </div>
+    <div id="out">
     </div>
     <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -47,16 +58,24 @@
     function showScore () {
       $("#score").text(score)
     }
-    function draw (txt) {
+    function drawDigit (txt) {
       $("#cnv").text(txt)
     }
     
     function newDigit () {
       return Math.floor(Math.random() * 10);
     }
+    
+    function drawDisk (x,y) {
+      //$("#cnv").html('<div class="ball" id="b2"></div>')
+      dot = $("<div></div>").attr('class', "ball")
+      .css("left", x+"px").css("top", y+"px")
+      $("#cnv").append(dot)
+    }
+    
     $( document ).ready(function() {
       var digit = newDigit();
-      draw(digit)
+      drawDigit(digit)
       var ini = new Date();
       $(window).on("keydown", function(event) {
         now = new Date()
@@ -76,7 +95,7 @@
         showScore()
         output(digit+ " "+key+" "+elapsed+" "+delta)
         digit = newDigit();
-        draw(digit)
+        drawDigit(digit)
       })
     })
     </script>
