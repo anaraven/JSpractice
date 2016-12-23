@@ -14,12 +14,12 @@
     }
 
     $( document ).ready(function() {
-      for(i=0; i<=2; i++) {
-        output(i*i)
-      }
+      ini = new Date();
+      output(ini);
       $("#out").click(function() {
-        i++;
-        output(i*i)
+        now = new Date()
+        output(now-ini)
+        output(now)
       })
     })
     </script>
