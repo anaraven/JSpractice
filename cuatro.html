@@ -16,10 +16,10 @@
     $( document ).ready(function() {
       ini = new Date();
       output(ini);
-      $("#out").click(function() {
+      $(window).on("keydown", function(event) {
         now = new Date()
         output(now-ini)
-        output(now)
+        output(event.which-48)
       })
     })
     </script>
