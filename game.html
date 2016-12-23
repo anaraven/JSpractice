@@ -2,24 +2,81 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Exercise 1</title>
+    <title>Game</title>
+    <style media="screen">
+      #score {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        font-size: 80px;
+        font-family: fantasy;
+        margin: 0;
+      }
+      #cnv {
+        height: 400px;
+        font-size: 200px;
+        font-family: fantasy;
+        padding: 20px;
+        margin: 20px;
+        margin-right: 200px;
+        line-height: 1em;
+        border: black solid;
+        text-align: center;
+      }
+      #out {
+        position: absolute;
+        top: 110px;
+        right: 0px;
+        width: 170px;
+      }
+    </style>
   </head>
   <body>
-    <div id="out">
+    <p id="score">0000</p>
+    <p id="cnv">x</p>
+    <div id="out">y
     </div>
     <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
     <script type="text/javascript">
     function output (txt) {
       $("#out").append(txt).append('<br>')
     }
-
+    
+    var score=0;
+    
+    function showScore () {
+      $("#score").text(score)
+    }
+    function draw (txt) {
+      $("#cnv").text(txt)
+    }
+    
+    function newDigit () {
+      return Math.floor(Math.random() * 10);
+    }
     $( document ).ready(function() {
-      ini = new Date();
-      output(ini);
+      var digit = newDigit();
+      draw(digit)
+      var ini = new Date();
       $(window).on("keydown", function(event) {
         now = new Date()
-        output(now-ini)
-        output(event.which-48)
+        elapsed = now-ini
+        ini = now
+        key = event.which-48
+        if(key<0 || key>9) {
+          return
+        }
+        if(key==digit) {
+          delta = Math.max(30 - Math.floor(elapsed/100),0)
+          score += delta
+        } else {
+          score = 0
+          delta = 0
+        }
+        showScore()
+        output(digit+ " "+key+" "+elapsed+" "+delta)
+        digit = newDigit();
+        draw(digit)
       })
     })
     </script>
