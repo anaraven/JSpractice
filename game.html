@@ -101,3 +101,52 @@
     </script>
   </body>
 </html>
+<!--
+Next steps
+==========
+
++ random 1
+~~~
+var bucket = [];
+
+for (var i=0;i<=10;i++) {
+    bucket.push(i);
+}
+
+function getRandomFromBucket() {
+   var randomIndex = Math.floor(Math.random()*bucket.length);
+   return bucket.splice(randomIndex, 1)[0];
+}
+
+// will pick a random number between 0 and 10, and can be called 10 times
+console.log(getRandomFromBucket());
+~~~
+
++ Random 2
+~~~
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, min = i - size, temp, index;
+    while (i > min) {
+        i -= 1; //chech if this is the right position
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(min);
+}
+~~~
+
++ Underscore.js
+    + _.range([start], stop, [step])
+    + _.sample(list, [n])
+    + _und = require('underscore');
+
+Drawing
+=======
+
+Disks are drawn in a lattice m*n, approx 16^2 or 10^2.
+Separation S on the x axis should be greater than the diameter of disks
+even numbered rows are shifted by S/2, so the latice is hexagonal.
+
+-->
